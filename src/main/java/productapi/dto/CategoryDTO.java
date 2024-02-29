@@ -1,6 +1,7 @@
 package productapi.dto;
 
 import jakarta.validation.constraints.NotNull;
+import productapi.model.Category;
 
 public class CategoryDTO {
     @NotNull
@@ -21,5 +22,12 @@ public class CategoryDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static CategoryDTO convertToCategory(Category category) {
+        CategoryDTO categoryDTO = new CategoryDTO();
+        categoryDTO.setId(category.getId());
+        categoryDTO.setName(categoryDTO.getName());
+        return categoryDTO;
     }
 }

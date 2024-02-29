@@ -1,6 +1,7 @@
 package productapi.model;
 
 import jakarta.persistence.*;
+import productapi.dto.ProductDTO;
 
 @Entity
 public class Product {
@@ -65,5 +66,15 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public static Product convertToProduct(ProductDTO productDTO) {
+        Product product = new Product();
+        product.setName(productDTO.getName());
+        product.setPrice(productDTO.getPrice());
+        product.setDescription(productDTO.getDescription());
+        product.setProductIdentifier(productDTO.getProductIdentifier());
+        product.setCategory(Category.convertToCategoryDTO(productDTO.getCategoryDTO()));
+        return product;
     }
 }

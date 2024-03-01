@@ -1,19 +1,26 @@
 package productapi.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import productapi.model.Product;
 
 public class ProductDTO {
+    @NotBlank
     private String productIdentifier;
+    @NotBlank
     private String name;
+    @NotNull
     private Float price;
+    @NotNull
     private CategoryDTO categoryDTO;
+    @NotBlank
     private String description;
 
     public String getProductIdentifier() {
         return productIdentifier;
     }
 
-    public void setProductIdentifier(String productIdentifier) {
+      public void setProductIdentifier(String productIdentifier) {
         this.productIdentifier = productIdentifier;
     }
 

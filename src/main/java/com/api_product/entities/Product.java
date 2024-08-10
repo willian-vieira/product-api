@@ -1,6 +1,5 @@
 package com.api_product.entities;
 
-import com.api_product.dto.CategoryDTO;
 import com.api_product.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

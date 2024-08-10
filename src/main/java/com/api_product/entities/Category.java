@@ -2,7 +2,6 @@ package com.api_product.entities;
 
 import com.api_product.dto.CategoryDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

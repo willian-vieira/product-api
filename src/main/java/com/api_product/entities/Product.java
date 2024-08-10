@@ -1,5 +1,7 @@
 package com.api_product.entities;
 
+import com.api_product.dto.CategoryDTO;
+import com.api_product.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,4 +29,14 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public static Product convertToProduct(ProductDTO productDTO) {
+        Product product = new Product();
+        product.setName(productDTO.getName());
+        product.setPrice(productDTO.getPrice());
+        product.setDescription(productDTO.getDescription());
+        product.setProductIdentifier(productDTO.getProductIdentifier());
+        product.setCategory(Category.convertToCategory(productDTO.getCategoryDTO()));
+        return product;
+    }
 }

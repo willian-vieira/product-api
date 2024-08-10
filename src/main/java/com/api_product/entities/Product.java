@@ -23,4 +23,8 @@ public class Product {
     private String description;
     @Column(nullable = false)
     private String productIdentifier;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
